@@ -42,7 +42,7 @@ void f(const int i){
 <p><font style="color:red">注意：非const变量默认为extern。要使const变量能够在其他文件中访问，必须在文件中显式地指定它为extern。</font></p>
 
 > 未被const修饰的变量在不同文件的访问
-
+dddd
 ```cpp
 // file1.cpp
 int ext;
