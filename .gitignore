@@ -1,1 +1,4 @@
 com.sh
+cmake-build-debug
+CMakeLists.txt
+.idea
