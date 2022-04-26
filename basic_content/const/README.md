@@ -345,7 +345,7 @@ int main(){
 > 编译： g++ -o main main.cpp apple.cpp<br>
 
 此时报错，上面getCount()方法中调用了一个add方法，而add方法并非const修饰，所以运行报错。也就是说const成员函数只能访问const成员函数。
->**注意(by nuo)**：是因为const成员函数中没有this，所以无法调用非const修饰的方法。const对象同理。
+>**注意(by nuo)**：是因为const成员函数不能修改其他变量的值，所以只能访问const变量与const函数，并将它的this指针指向不能修改的变量，那就是`const A*`,又由于本身this是`const`指针，所以就为`const A* const`!。const对象同理。
 
 当调用改为：
 

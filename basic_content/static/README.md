@@ -270,7 +270,7 @@ g++对于上面两个代码文件是可以正常编译并且打印Hello World!�
 ```cpp
 // source1.cpp
 extern void sayHello();
-static const char* msg = "Hello World!\n";
+static const char* msg = "Hello World!\n"; //当是指针时不需要加extern，其余要加，否则出错。
 int main()
 {
     sayHello();
