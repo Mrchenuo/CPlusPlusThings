@@ -9,15 +9,16 @@
  */
 
 #include<iostream>
-
+//#pragma pack(2)
 using namespace std;
 
 class A
 {
-    public:
-        char a;
-        int b;
-};
+public:
+    char a;
+    int b;
+}; // 1+(3) + 4 = 8
+// gcc中默认#pragma pack(4)，可以通过预编译命令#pragma pack(n)，n = 1,2,4,8,16来改变这一系数。
 
 /**
  * @brief 此时B按照顺序：
@@ -26,6 +27,7 @@ class A
  * short a
  * long b
  * 根据字节对齐4+4+8+8=24
+ * (Note:by nuo):上面是在64位下结果。32位下的实验结果：根据字节对齐4+4+(2+2)+4=16
  *
  * 或编译器优化
  * char a
@@ -33,13 +35,24 @@ class A
  * int b
  * long b
  * 根据字节对齐2+2+4+8=16
+ * (Note:by nuo):上面是在64位下结果。32位下的实验结果：根据字节对齐(1+1)+2+4+4=12
  */
 class B:A
 {
-    public:
-        short a;
-        long b;
+public:
+    short aa;
+    long ba;
 };
+
+class B1
+{
+public:
+    char a;
+    short aa;
+    int b;
+    long bb;
+};
+
 /**
 * 把A的成员拆开看，char为1，int为4，所以是1+（3）+4+1+（3）=12，（）为字节补齐
 */
@@ -51,22 +64,28 @@ class C
 
 class A1
 {
-    virtual void fun(){}
+    virtual void fun() {}
 };
-class C1:public A
+
+class C1 : public A1
 {
 };
 
 
 int main()
 {
-    cout<<sizeof(A)<<endl; // 8
-    cout<<sizeof(B)<<endl; // 16
-    cout<<sizeof(C)<<endl; // 12
+    B1 b;
+    cout << sizeof(A) << endl; // 8
+    cout << sizeof(B) << endl; // 24
+    cout << sizeof(B1) << endl; // 16
+    cout << sizeof(C) << endl; // 12
 
     /**
      * @brief 对于虚单函数继承，派生类也继承了基类的vptr，所以是8字节
      */
-    cout<<sizeof(C1)<<endl; // 8 
+    cout << sizeof(A1) << endl; // 8
+    cout << sizeof(C1) << endl; // 8
+    cout << sizeof(short) << endl; // 2
+    cout << sizeof(long) << endl; // 8
     return 0;
 }
