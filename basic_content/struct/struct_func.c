@@ -19,6 +19,7 @@ void Base(){
 
 int main() {
     struct Base base;
+//    Base base; // Must use 'struct' tag to refer to type 'Base'
     base.v1=1;
     //base.print();
     printf("%d\n",base.v1);
