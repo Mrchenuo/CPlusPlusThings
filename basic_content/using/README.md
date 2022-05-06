@@ -109,9 +109,9 @@ int main()
 完整代码见：[using_derived.cpp](using_derived.cpp)
 ## 取代typedef
 
-C中常用typedef A B这样的语法，将B定义为A类型，也就是给A类型一个别名B
+==C中常用typedef A B这样的语法，将B定义为A类型，也就是给A类型一个别名B==
 
-对应typedef A B，使用using B=A可以进行同样的操作。
+==对应typedef A B，使用using B=A可以进行同样的操作。==
 
 ```c++
 typedef vector<int> V1; 

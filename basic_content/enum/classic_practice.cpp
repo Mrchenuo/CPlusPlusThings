@@ -62,7 +62,7 @@ enum class Color3:char
     BLUE
 };
 
-int main() 
+int main()
 {
     // 定义新的枚举变量
     Color::Type c = Color::RED;
@@ -74,14 +74,16 @@ int main()
      */
     Color1 c1;
     cout<<c1.RED<<endl;
+    cout<<c1.BLUE<<endl;
 
     Color1::Type c11 = Color1::BLUE;
     cout<<c11<<endl;
     
     Color2 c2 = Color2::RED;
     cout << static_cast<int>(c2) << endl;
-    
-    char c3 = static_cast<char>(Color3::RED);
+//    cout << c2 << endl; //不转报错
+
+    char c3 = static_cast<char>(Color3::BLUE);
     cout<<c3<<endl;
     return 0;
 }

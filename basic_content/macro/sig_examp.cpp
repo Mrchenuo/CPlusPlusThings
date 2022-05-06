@@ -48,9 +48,9 @@ int main() {
     string str = exp2(   bac );
     cout<<str<<" "<<str.size()<<endl;
     /**
-     * 忽略传入参数名前面和后面的空格。
+     * 忽略传入参数名前面和后面的空格。中间无论几个空格，只算一个
      */
-    string str1 = exp2( asda  bac );
+    string str1 = exp2( asda   bac );
     /**
      * 当传入参数名间存在空格时，编译器将会自动连接各个子字符串，
      * 用每个子字符串之间以一个空格连接，忽略剩余空格。
