@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-
+// ½×³Ë
 int f(int n);
 int main(int argc, char const *argv[])
 {   
