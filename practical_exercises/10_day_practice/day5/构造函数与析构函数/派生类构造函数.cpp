@@ -24,4 +24,10 @@ int main(){
     Derived d(1,2);
     system("pause");
     return 0;
-} 
+}
+
+/*
+Base constructor x=1
+Derived constructor y=2
+Derived destructor...
+Base destructor...*/

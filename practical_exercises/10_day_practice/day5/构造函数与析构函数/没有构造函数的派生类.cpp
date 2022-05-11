@@ -13,3 +13,8 @@ int main(){
     B b;
     system("pause");
 }
+
+/*
+Constructing A
+Destructing B
+Destructing A*/
