@@ -59,7 +59,8 @@ bool String::operator>=(const String &R) { return !(*this < R); }
 char &String::operator[](int subscript) { return sPtr[subscript]; }
 int main()
 {
-    String s1("happy"), s2("new year"), s3;
+    String s1("happy"), s2("new year");
+    String  s3;
     cout << "s1 is " << s1 << "\ns2 is " << s2 << "\ns3 is " << s3
          << "\n比较s2和s1:"
          << "\ns2 ==s1结果是 " << (s2 == s1 ? "true" : "false")
@@ -86,6 +87,7 @@ int main()
     s1[6] = 'N';
     s1[10] = 'Y';
     cout << "s1 = " << s1 << "\n"; //L10
+    cin>>s1;
     system("pause");
     return 0;
 }

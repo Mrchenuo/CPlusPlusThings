@@ -19,3 +19,11 @@ int main (void)
     cout<<"b="<<b<<endl;
     system("pause");
 }
+
+/*
+X::operator(1)
+X::operator(1,2)
+X::operator[1]
+X::operator[abcd]
+a=1
+b=0*/
